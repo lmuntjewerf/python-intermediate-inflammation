@@ -49,3 +49,10 @@ def patient_normalise(data):
     max = np.max(data, axis=1)
     return data / max[:, np.newaxis]
 
+def daily_std(data):
+    """A function for calculating the daily std of a 2D inflammation data array.
+
+    :param data: A 2D data array with inflammation data (each row contains measurements for a single patient across all days).
+    :returns: An array of std values of measurements for each day.
+    """
+    return np.std(data, axis=0)
